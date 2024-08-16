@@ -57,7 +57,7 @@ def getSynonymAPI(word) -> str:
     with open("./mutation_data/synonyms.json", "r+") as f:
         local_synonyms = json.load(f)
         if word in local_synonyms:
-            if len(local_synonyms[word]) is 0:
+            if len(local_synonyms[word]) == 0:
                 return word
             return local_synonyms[word][0]
         url = f"https://wordsapiv1.p.rapidapi.com/words/{word}/synonyms"
@@ -78,7 +78,7 @@ def getSynonymAPI(word) -> str:
         f.seek(0)
         f.write((json.dumps(local_synonyms)))
         f.truncate()
-        if len(synonyms) is 0:
+        if len(synonyms) == 0:
             return word
         return synonyms
 
@@ -86,7 +86,7 @@ def getAntonymAPI(word) -> str:
     with open("./mutation_data/antonyms.json", "r+") as f:
         local_antonyms = json.load(f)
         if word in local_antonyms:
-            if len(local_antonyms[word]) is 0:
+            if len(local_antonyms[word]) == 0:
                 return word
             return local_antonyms[word][0]
         url = f"https://wordsapiv1.p.rapidapi.com/words/{word}/antonyms"
@@ -106,7 +106,7 @@ def getAntonymAPI(word) -> str:
         f.seek(0)
         f.write((json.dumps(local_antonyms)))
         f.truncate()
-        if len(antonyms) is 0:
+        if len(antonyms) == 0:
             return word
         return antonyms[0]
 
