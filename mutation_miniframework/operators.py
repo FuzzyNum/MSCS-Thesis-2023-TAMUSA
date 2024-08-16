@@ -1,4 +1,4 @@
-from mutation_miniframework.base_mutators import *
+from base_mutators import *
 
 #Mutation Operators
 '''
